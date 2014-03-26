@@ -17,6 +17,12 @@ public class QueryProcessor {
         if(query.contains("what currency did Spain use before the Euro")){
             return "peseta";
         }
+        if(query.contains("which city is the Eiffel tower in")){
+            return "paris";
+        }
+        if(query.contains("who played James Bond in the film Dr No")){
+            return "sean connery";
+        }
 
         if (query.contains("square") || query.contains("which")) {
             String[] parts = query.split(":");
