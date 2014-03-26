@@ -19,4 +19,15 @@ public class QueryProcessorTest {
     public void knowsAboutProgramming() throws Exception {
         assertThat(queryProcessor.process("programming"), containsString("computing"));
     }
+
+    @Test
+    public void Largest() throws  Exception{
+        assertThat(queryProcessor.process("which of the following numbers is the largest: 30, 34, 115, 40"), containsString("115"));
+        assertThat(queryProcessor.process("which of the following numbers is the largest: 590, 400, 97, 9"), containsString("590"));
+    }
+
+
+
+
+
 }
