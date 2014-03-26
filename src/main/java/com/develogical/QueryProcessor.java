@@ -14,6 +14,10 @@ public class QueryProcessor {
             return "David Cameron";
         }
 
+        if(query.contains("what currency did Spain use before the Euro")){
+            return "peseta";
+        }
+
         if (query.contains("square") || query.contains("which")) {
             String[] parts = query.split(":");
             String numbers = parts[2].trim();
