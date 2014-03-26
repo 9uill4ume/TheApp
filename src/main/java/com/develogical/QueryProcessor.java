@@ -5,6 +5,9 @@ import java.util.Arrays;
 public class QueryProcessor {
 
     public String process(String query) {
+        if (query.contains("Fibonacci")) {
+            return "" ;
+        }
         if (query.contains("programming")) {
             return "Computer programming is the comprehensive process that leads from an original "
                     + "formulation of a computing problem to executable programs.";
@@ -77,6 +80,7 @@ public class QueryProcessor {
             if (query.contains("multiplied")) {
                 result = Integer.parseInt(Parts[3]) * Integer.parseInt(Parts[6]);
             }
+
             return result.toString();
         }
 
