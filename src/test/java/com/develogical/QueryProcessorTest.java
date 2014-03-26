@@ -53,4 +53,10 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("34R45EZRFED: who is the Prime Minister of Great Britain"), containsString("David Cameron"));
     }
 
+    @Test
+    public void Prime() throws  Exception{
+        assertThat(queryProcessor.process("34R45EZRFED:  which of the following numbers are primes: 381, 317, 474, 97 "), containsString("474"));
+        assertThat(queryProcessor.process("34R45EZRFED:  which of the following numbers are primes: 3, 317, 97 "), containsString("3"));
+    }
+
 }

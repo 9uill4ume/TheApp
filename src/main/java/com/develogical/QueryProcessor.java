@@ -48,7 +48,20 @@ public class QueryProcessor {
                 }
                 return "";
             }
-
+            if(query.contains("primes")){
+                String Resultats = "" ;
+                boolean first = true;
+                for (int i = 0; i < ListNumberInt.length; i++) {
+                    if(isPrime(ListNumberInt[i])){
+                        if(first){
+                            first = false ;
+                            Resultats.concat(ListNumberInt[i].toString());
+                        }else{
+                            Resultats.concat(", ").concat(ListNumberInt[i].toString());
+                        }
+                    }
+                }
+            }
             if (query.contains("which")) {
                 Arrays.sort(ListNumberInt);
                 return ListNumberInt[ListNumberInt.length - 1].toString();
@@ -69,6 +82,22 @@ public class QueryProcessor {
 
 
         return "";
+    }
+
+    public boolean isPrime(Integer number){
+        //check if number is 2, the odd even prime
+        if (Math.abs(number) == 2)
+            return true;
+        //check if number is a multiple of 2
+        if (number % 2 == 0)
+            return false;
+        //if not, then just check the odds
+        for (int i = 3; i * i <= number; i += 2) {
+            if (number % i == 0)
+                return false;
+        }
+        return true;
+
     }
 
 }
