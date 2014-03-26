@@ -70,9 +70,9 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("34R45EZRFED:  which of the following numbers are primes: 3, 317, 97 "), containsString("3"));
     }
 
-    /*@Test
+    @Test
     public void Fibo() throws  Exception{
-        assertThat(queryProcessor.process("34R45EZRFED:  what is the 9th number in the Fibonacci sequence "), containsString("34"));
-    }*/
+        assertThat(queryProcessor.process("34R45EZRFED: what is the 9th number in the Fibonacci sequence "), containsString("34"));
+    }
 
 }
