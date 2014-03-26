@@ -34,5 +34,17 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("34R45EZRFED: what is 2 plus 5"), containsString("7"));
     }
 
+    @Test
+    public void Multiply() throws  Exception{
+        assertThat(queryProcessor.process("34R45EZRFED: what is 6 multiplied by 2 "), containsString("12"));
+        assertThat(queryProcessor.process("34R45EZRFED: what is 6 multiplied by 3 "), containsString("18"));
+    }
+
+    /*@Test
+    public void Square() throws  Exception{
+        assertThat(queryProcessor.process("34R45EZRFED: which of the following numbers is both a square and a cube: 100, 652 "), containsString(""));
+        assertThat(queryProcessor.process("34R45EZRFED: which of the following numbers is both a square and a cube: 100, 652 "), containsString(""));
+    }*/
+
 
 }
