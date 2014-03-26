@@ -80,6 +80,9 @@ public class QueryProcessorTest {
     public void math() throws  Exception{
         assertThat(queryProcessor.process("34R45EZRFED: what is 10 multiplied by 10 plus 8"), containsString("108"));
         assertThat(queryProcessor.process("34R45EZRFED: what is 10 minus 7 plus 8"), containsString("11"));
+        assertThat(queryProcessor.process("34R45EZRFED: what is 6 plus 6 plus 1"), containsString("13"));
+        assertThat(queryProcessor.process("34R45EZRFED: what is 6 plus 6 plus 2"), containsString("14"));
+        assertThat(queryProcessor.process("34R45EZRFED: what is 6 plus 6 multiplied by 2"), containsString("18"));
     }
 }
 

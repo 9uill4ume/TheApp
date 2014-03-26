@@ -119,7 +119,7 @@ public class QueryProcessor {
 
             String[] parties = query.split(":");
             String Expression = parties[1];
-            Expression = Expression.replace("by", "").replaceAll("what is", "")
+            Expression = Expression.replace("by", "").replaceAll("what is", "").replaceAll("to","").replaceAll("of","").replaceAll("the","")
                     .replaceAll(" ", "")
                     .replaceAll("plus", "+")
                     .replaceAll("minus", "-")
@@ -129,7 +129,7 @@ public class QueryProcessor {
             ;
             try {
                 Calculable calc = new ExpressionBuilder(Expression).build();
-                return Double.toString(calc.calculate());
+                return Double.toString(Math.floor(calc.calculate()));
             }catch(Exception nfe) {
                 System.out.println(nfe.getMessage());
                 return "";
