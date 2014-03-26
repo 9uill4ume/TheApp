@@ -1,5 +1,7 @@
 package com.develogical;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -96,25 +98,40 @@ public class QueryProcessor {
             }
         }
         if (query.contains("what")) {
+
+
             String[] Parts = query.split(" ");
             Integer result = new Integer(0);
-            if (query.contains("plus")) {
-                result = Integer.parseInt(Parts[3]) + Integer.parseInt(Parts[5]);
-            }
-            if (query.contains("minus")) {
-                result = Integer.parseInt(Parts[3]) - Integer.parseInt(Parts[5]);
-            }
-            if (query.contains("multiplied")) {
-                result = Integer.parseInt(Parts[3]) * Integer.parseInt(Parts[6]);
-            }
-            if (query.contains("power")) {
-                result = (int) Math.pow(Double.parseDouble(Parts[3].toString()), Double.parseDouble(Parts[8].toString()));
-            }
 
             if (query.contains("Fibonacci")) {
                 Scanner in = new Scanner(Parts[4]).useDelimiter("[^0-9]+");
                 int iteration = in.nextInt();
                 result = fibonacci(iteration);
+                return result.toString();
+            }
+            if (query.contains("power")) {
+                result = (int) Math.pow(Double.parseDouble(Parts[3].toString()), Double.parseDouble(Parts[8].toString()));
+                return result.toString();
+            }
+
+            String[] parties = query.split(":");
+            String Expression = parties[1];
+            Expression = Expression.replace("by","").replaceAll("what is", "")
+                    .replaceAll(" ", "")
+                    .replaceAll("plus", "+")
+                    .replaceAll("minus", "-")
+                    .replaceAll("multiplied", "*")
+                    .replaceAll("divided", "/")
+                    .replaceAll("power", "^")
+            ;
+
+            ScriptEngineManager mgr = new ScriptEngineManager();
+            ScriptEngine engine = mgr.getEngineByName("JavaScript");
+            try {
+               String resultJs =  engine.eval(Expression).toString();
+                result = Integer.parseInt(resultJs) ;
+            }catch (Exception nfe){
+                return "" ;
             }
 
             return result.toString();

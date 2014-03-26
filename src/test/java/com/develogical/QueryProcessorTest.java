@@ -45,7 +45,7 @@ public class QueryProcessorTest {
     }
 
     @Test
-    public void Multiply() throws  Exception{
+     public void Multiply() throws  Exception{
         assertThat(queryProcessor.process("34R45EZRFED: what is 6 multiplied by 2 "), containsString("12"));
         assertThat(queryProcessor.process("34R45EZRFED: what is 6 multiplied by 3 "), containsString("18"));
     }
@@ -75,4 +75,11 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("34R45EZRFED: what is the 9th number in the Fibonacci sequence "), containsString("34"));
     }
 
+
+    @Test
+    public void math() throws  Exception{
+        assertThat(queryProcessor.process("34R45EZRFED: what is 10 multiplied by 10 plus 8"), containsString("108"));
+        assertThat(queryProcessor.process("34R45EZRFED: what is 10 minus 7 plus 8"), containsString("11"));
+    }
 }
+
