@@ -6,11 +6,11 @@ public class QueryProcessor {
 
     public String process(String query) {
         if (query.contains("programming")) {
-            return "Computer programming is the comprehensive process that leads from an original " 
-                   + "formulation of a computing problem to executable programs.";
+            return "Computer programming is the comprehensive process that leads from an original "
+                    + "formulation of a computing problem to executable programs.";
         }
 
-        if(query.contains("square") || query.contains("which")) {
+        if (query.contains("square") || query.contains("which")) {
             String[] parts = query.split(":");
             String numbers = parts[2].trim();
             String[] listNumber = numbers.split(",");
@@ -22,11 +22,11 @@ public class QueryProcessor {
             if (query.contains("square")) {
                 for (int i = 0; i < ListNumberInt.length; i++) {
 
-                    if(
+                    if (
                             (Math.floor(Math.sqrt(ListNumberInt[i])) == Math.sqrt(ListNumberInt[i]))
-                           && (Math.floor(Math.cbrt(ListNumberInt[i])) == Math.cbrt(ListNumberInt[i]))
+                                    && (Math.floor(Math.cbrt(ListNumberInt[i])) == Math.cbrt(ListNumberInt[i]))
 
-                            ){
+                            ) {
                         Integer resulta = ListNumberInt[i];
                         return resulta.toString();
                     }
@@ -41,18 +41,17 @@ public class QueryProcessor {
 
             }
         }
-        if(query.contains("what")){
+        if (query.contains("what")) {
             String[] Parts = query.split(" ");
-            Integer result = new Integer(0) ;
-            if(query.contains("plus")) {
+            Integer result = new Integer(0);
+            if (query.contains("plus")) {
                 result = Integer.parseInt(Parts[3]) + Integer.parseInt(Parts[5]);
             }
-            if(query.contains("multiplied")){
+            if (query.contains("multiplied")) {
                 result = Integer.parseInt(Parts[3]) * Integer.parseInt(Parts[6]);
             }
             return result.toString();
         }
-
 
 
         return "";
