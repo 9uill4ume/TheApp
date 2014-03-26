@@ -1,5 +1,8 @@
 package com.develogical;
 
+import de.congrace.exp4j.Calculable;
+import de.congrace.exp4j.ExpressionBuilder;
+
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import java.util.Arrays;
@@ -116,24 +119,21 @@ public class QueryProcessor {
 
             String[] parties = query.split(":");
             String Expression = parties[1];
-            Expression = Expression.replace("by","").replaceAll("what is", "")
+            Expression = Expression.replace("by", "").replaceAll("what is", "")
                     .replaceAll(" ", "")
                     .replaceAll("plus", "+")
                     .replaceAll("minus", "-")
                     .replaceAll("multiplied", "*")
                     .replaceAll("divided", "/")
             ;
-
-            ScriptEngineManager mgr = new ScriptEngineManager();
-            ScriptEngine engine = mgr.getEngineByName("JavaScript");
             try {
-               String resultJs =  engine.eval(Expression).toString();
-                result = Integer.parseInt(resultJs) ;
-            }catch (Exception nfe){
-                System.out.println(nfe.getMessage()) ;
+                Calculable calc = new ExpressionBuilder(Expression).build();
+                return Double.toString(calc.calculate());
+            }catch(Exception nfe) {
+                System.out.println(nfe.getMessage());
+                return "";
             }
 
-            return result.toString();
         }
 
 
