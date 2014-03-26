@@ -23,7 +23,9 @@ public class QueryProcessor {
 
         }
         if(query.contains("what")){
-
+            String[] Parts = query.split(" ");
+            Integer result = Integer.parseInt(Parts[3]) + Integer.parseInt(Parts[5]);
+            return result.toString();
         }
 
         return "";
