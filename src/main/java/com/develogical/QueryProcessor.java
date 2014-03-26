@@ -122,7 +122,6 @@ public class QueryProcessor {
                     .replaceAll("minus", "-")
                     .replaceAll("multiplied", "*")
                     .replaceAll("divided", "/")
-                    .replaceAll("power", "^")
             ;
 
             ScriptEngineManager mgr = new ScriptEngineManager();
@@ -131,7 +130,7 @@ public class QueryProcessor {
                String resultJs =  engine.eval(Expression).toString();
                 result = Integer.parseInt(resultJs) ;
             }catch (Exception nfe){
-                return "" ;
+                System.out.println(nfe.getMessage()) ;
             }
 
             return result.toString();
