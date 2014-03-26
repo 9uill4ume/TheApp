@@ -40,11 +40,12 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("34R45EZRFED: what is 6 multiplied by 3 "), containsString("18"));
     }
 
-    /*@Test
+
+    @Test
     public void Square() throws  Exception{
         assertThat(queryProcessor.process("34R45EZRFED: which of the following numbers is both a square and a cube: 100, 652 "), containsString(""));
-        assertThat(queryProcessor.process("34R45EZRFED: which of the following numbers is both a square and a cube: 100, 652 "), containsString(""));
-    }*/
+        assertThat(queryProcessor.process("34R45EZRFED: which of the following numbers is both a square and a cube: 100, 1000000 "), containsString("1000000"));
+    }
 
 
 }

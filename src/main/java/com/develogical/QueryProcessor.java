@@ -20,9 +20,19 @@ public class QueryProcessor {
             }
 
             if (query.contains("square")) {
-                String[] Parts = query.split(" ");
-                Integer result = Integer.parseInt(Parts[3]) + Integer.parseInt(Parts[5]);
-                return result.toString();
+                for (int i = 0; i < ListNumberInt.length; i++) {
+
+                    if(
+                            (Math.floor(Math.sqrt(ListNumberInt[i])) == Math.sqrt(ListNumberInt[i]))
+                           && (Math.floor(Math.cbrt(ListNumberInt[i])) == Math.cbrt(ListNumberInt[i]))
+
+                            ){
+                        Integer resulta = ListNumberInt[i];
+                        return resulta.toString();
+                    }
+
+                }
+                return "";
             }
 
             if (query.contains("which")) {
@@ -47,4 +57,5 @@ public class QueryProcessor {
 
         return "";
     }
+
 }
