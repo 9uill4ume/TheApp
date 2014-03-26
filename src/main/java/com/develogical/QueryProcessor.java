@@ -11,7 +11,7 @@ public class QueryProcessor {
         }
         if(query.contains("which")){
             String[] parts = query.split(":");
-            String numbers = parts[1].trim();
+            String numbers = parts[2].trim();
             String[] listNumber = numbers.split(",");
             Integer[] ListNumberInt = new Integer[listNumber.length];
             for(int i =0 ; i< listNumber.length;i++){
