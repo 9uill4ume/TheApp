@@ -16,6 +16,9 @@ public class QueryProcessor {
         if(query.contains("who is the Prime Minister of Great Britain")){
             return "David Cameron";
         }
+        if(query.contains("what colour is a banana")){
+            return "yellow";
+        }
 
         if(query.contains("what currency did Spain use before the Euro")){
             return "peseta";
