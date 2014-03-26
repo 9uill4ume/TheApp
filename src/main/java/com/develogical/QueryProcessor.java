@@ -23,6 +23,7 @@ public class QueryProcessor {
                 && !query.contains("banana")
                 && !query.contains("spain")
                 && !query.contains("programming")
+                && !query.contains("power")
                 ){
             return "" ;
         }
@@ -108,6 +109,9 @@ public class QueryProcessor {
             }
             if (query.contains("multiplied")) {
                 result = Integer.parseInt(Parts[3]) * Integer.parseInt(Parts[6]);
+            }
+            if (query.contains("power")) {
+                result = (int) Math.pow(Double.parseDouble(Parts[3].toString()),Double.parseDouble(Parts[8].toString()));
             }
 
             if (query.contains("Fibonacci")) {

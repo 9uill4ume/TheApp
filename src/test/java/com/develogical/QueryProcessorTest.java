@@ -39,6 +39,10 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("34R45EZRFED: what is 19 minus 18"), containsString("1"));
         assertThat(queryProcessor.process("34R45EZRFED: what is 2 minus 5"), containsString("-3"));
     }
+ @Test
+    public void Power() throws  Exception{
+        assertThat(queryProcessor.process("34R45EZRFED: what is 2 to the power of 3"), containsString("8"));
+    }
 
     @Test
     public void Multiply() throws  Exception{
