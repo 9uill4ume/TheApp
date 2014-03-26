@@ -1,10 +1,33 @@
 package com.develogical;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class QueryProcessor {
 
     public String process(String query) {
+
+
+        if
+                (
+                   !query.contains("Fibonacci")
+                && !query.contains("plus")
+                && !query.contains("minus")
+                && !query.contains("primes")
+                && !query.contains("Britain")
+                && !query.contains("square")
+                && !query.contains("multiplied")
+                && !query.contains("largest")
+                && !query.contains("James")
+                && !query.contains("Eiffel")
+                && !query.contains("banana")
+                && !query.contains("spain")
+                && !query.contains("programming")
+                ){
+            return "" ;
+        }
+
+
         if (query.contains("Fibonacci")) {
             return "" ;
         }
@@ -80,7 +103,16 @@ public class QueryProcessor {
             if (query.contains("plus")) {
                 result = Integer.parseInt(Parts[3]) + Integer.parseInt(Parts[5]);
             }
+            if (query.contains("minus")) {
+                result = Integer.parseInt(Parts[3]) - Integer.parseInt(Parts[5]);
+            }
             if (query.contains("multiplied")) {
+                result = Integer.parseInt(Parts[3]) * Integer.parseInt(Parts[6]);
+            }
+
+            if (query.contains("Fibonacci")) {
+                Scanner in = new Scanner(query).useDelimiter("[^0-9]+");
+                int integer = in.nextInt();
                 result = Integer.parseInt(Parts[3]) * Integer.parseInt(Parts[6]);
             }
 

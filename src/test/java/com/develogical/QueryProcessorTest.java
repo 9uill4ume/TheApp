@@ -35,6 +35,12 @@ public class QueryProcessorTest {
     }
 
     @Test
+    public void Minus() throws  Exception{
+        assertThat(queryProcessor.process("34R45EZRFED: what is 19 minus 18"), containsString("1"));
+        assertThat(queryProcessor.process("34R45EZRFED: what is 2 minus 5"), containsString("-3"));
+    }
+
+    @Test
     public void Multiply() throws  Exception{
         assertThat(queryProcessor.process("34R45EZRFED: what is 6 multiplied by 2 "), containsString("12"));
         assertThat(queryProcessor.process("34R45EZRFED: what is 6 multiplied by 3 "), containsString("18"));
@@ -60,7 +66,7 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("34R45EZRFED:  which of the following numbers are primes: 3, 317, 97 "), containsString("3"));
     }
 
-    /*est
+    /*@Test
     public void Fibo() throws  Exception{
         assertThat(queryProcessor.process("34R45EZRFED:  what is the 9th number in the Fibonacci sequence "), containsString("34"));
     }*/
