@@ -125,6 +125,7 @@ public class QueryProcessor {
                     .replaceAll("minus", "-")
                     .replaceAll("multiplied", "*")
                     .replaceAll("divided", "/")
+                    .replaceAll("power", "^")
             ;
             try {
                 Calculable calc = new ExpressionBuilder(Expression).build();
