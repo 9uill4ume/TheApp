@@ -48,4 +48,9 @@ public class QueryProcessorTest {
     }
 
 
+    @Test
+    public void David() throws  Exception{
+        assertThat(queryProcessor.process("34R45EZRFED: who is the Prime Minister of Great Britain"), containsString("David Cameron"));
+    }
+
 }

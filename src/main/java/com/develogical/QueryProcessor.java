@@ -10,6 +10,10 @@ public class QueryProcessor {
                     + "formulation of a computing problem to executable programs.";
         }
 
+        if(query.contains("who is the Prime Minister of Great Britain")){
+            return "David Cameron";
+        }
+
         if (query.contains("square") || query.contains("which")) {
             String[] parts = query.split(":");
             String numbers = parts[2].trim();
